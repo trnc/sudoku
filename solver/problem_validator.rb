@@ -9,11 +9,11 @@ class ProblemValidator
 
   def perform
     is_present?
-    true
-    # formatted?
+    formatted?
     # unique_numbers_in_cell?
     # unique_numbers_in_rows?
     # unique_numbers_in_columns?
+    true
   end
 
   private
@@ -35,6 +35,10 @@ class ProblemValidator
   end
 
   def array_format
+    fail_message = 'Oh no! Provide array with 9 by 9 format!'
+    fail fail_message if problem.length != 9
+    problem.each do |cell|
+      fail fail_message if cell.length != 9
+    end
   end
 end
-    #
