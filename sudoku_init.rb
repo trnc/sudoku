@@ -1,3 +1,5 @@
+require_relative 'solver/problem_validation'
+
 class SudokuInitializer
   def initialize(problem = nil)
     validate_params(problem)
@@ -10,6 +12,6 @@ class SudokuInitializer
   private
 
   def validate_params(problem)
-    fail 'Ohhh! Millions of decisions! Provide a problem.' if problem.nil?
+    ProblemValidation.new(problem).perform
   end
 end

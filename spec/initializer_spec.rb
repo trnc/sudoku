@@ -13,8 +13,8 @@ describe SudokuInitializer do
   #   expect(sudoku.instance_eval{ @problem }).to eq arr
   # end
   #
-  # it 'will raise error if array is not 9by9 format' do
-  # end
+  it 'will raise error if array is not 9by9 format' do
+  end
 
   # it 'will raise error is cells has the same numbers' do
   # end
