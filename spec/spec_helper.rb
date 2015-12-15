@@ -1,1 +1,1 @@
-require_relative '../main'
+require_relative '../sudoku_init'
