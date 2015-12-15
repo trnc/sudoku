@@ -1,4 +1,5 @@
 require_relative 'solver/problem_validator'
+require_relative 'solver/problem_unifier'
 
 class SudokuInitializer
   def initialize(problem = nil)

@@ -10,6 +10,7 @@ class ProblemValidator
   def perform
     is_present?
     formatted?
+    numbers_and_dots?
     # unique_numbers_in_cell?
     # unique_numbers_in_rows?
     # unique_numbers_in_columns?
@@ -40,5 +41,10 @@ class ProblemValidator
     problem.each do |cell|
       fail fail_message if cell.length != 9
     end
+  end
+
+  def numbers_and_dots
+    UnifiedProblem.new(problem).unify
+    fail 'Oh! I accept only 1-9 integers and dots'
   end
 end
