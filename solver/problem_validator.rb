@@ -1,3 +1,5 @@
+require_relative 'problem_unifier'
+
 class ProblemValidator
   attr_reader :problem
   private :problem
@@ -27,7 +29,7 @@ class ProblemValidator
     case problem
     when Array then array_format
     when String then string_format
-    else fail 'I understand only strings and arrays'
+    else fail 'I understand either string or array'
     end
   end
 
@@ -43,8 +45,19 @@ class ProblemValidator
     end
   end
 
-  def numbers_and_dots
-    UnifiedProblem.new(problem).unify
-    fail 'Oh! I accept only 1-9 integers and dots'
+  def numbers_and_dots?
+    fail_message = 'Oh! I accept either 1-9 integers or dots'
+    unf_arr = ProblemUnifier.new(problem).unify
+
+    unf_arr.each do |cell|
+      cell.each do |el|
+        fail fail_message unless el.to_s =~ /^[1-9\.]/
+      end
+    end
   end
+
+  # def unique_numbers_in_cell?
+  #   fail 'Do not cheat me! Non-unique numbers in cells detected!'
+  #   problem.each do |cell|
+  # end
 end

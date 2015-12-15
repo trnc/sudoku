@@ -7,10 +7,15 @@ class ProblemUnifier
   end
 
   def unify
-    problem.is_a?(Array) ? problem : from_string
+    dots_to_zeros
   end
 
   private
+
+  def dots_to_zeros
+    problem2arr = problem.is_a?(Array) ? problem : from_string
+    problem2arr.each { |cell| cell.map! { |el| el.to_i  } }
+  end
 
   def from_string
     [].tap do |arr|

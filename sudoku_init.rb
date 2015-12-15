@@ -3,11 +3,7 @@ require_relative 'solver/problem_unifier'
 
 class SudokuInitializer
   def initialize(problem = nil)
-    validate_params(problem)
-    @problem = problem
-  end
-
-  def problem
+    @problem = problem if problem_valid?(problem)
   end
 
   private
