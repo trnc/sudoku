@@ -1,4 +1,4 @@
-require_relative 'solver/problem_validation'
+require_relative 'solver/problem_validator'
 
 class SudokuInitializer
   def initialize(problem = nil)
@@ -12,6 +12,6 @@ class SudokuInitializer
   private
 
   def validate_params(problem)
-    ProblemValidation.new(problem).perform
+    ProblemValidator.new(problem).perform
   end
 end
