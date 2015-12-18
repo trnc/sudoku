@@ -18,7 +18,7 @@ describe ProblemUnifier do
 
   it 'will convert string to 9 by 9 dimension array', t: true do
     str = ''
-    9.times { |n| str += '.' * 8 + "#{n + 1}" }
+    9.times { |n| str  += '.' * 8 + "#{n + 1}" }
     expect(ProblemUnifier.new(str).unify).to eq output_arr
   end
 end
