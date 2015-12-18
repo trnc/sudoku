@@ -1,0 +1,14 @@
+AllCops:
+  RunRailsCops: true
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+AsciiComments:
+  Enabled: false
+Metrics/LineLength:
+  Max: 110
+  AllowURI: true
+  URISchemes:
+    - http
+    - https

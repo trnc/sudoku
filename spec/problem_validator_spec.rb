@@ -17,7 +17,7 @@ describe ProblemValidator do
   end
 
   describe 'it will allow' do
-    it 'string as 81 length with numbers and dots' do
+    it 'string as 81 length with numbers and dots', f:true do
       str = '.' * 80 + '1'
       expect(ProblemValidator.new(str).perform).to eq true
     end
@@ -58,7 +58,6 @@ describe ProblemValidator do
     it 'will raise error is cells has the same numbers' do
       bad_arr = arr.dup
       bad_arr[0][0] = bad_arr[0][1] = 1
-      p bad_arr
       expect{ ProblemValidator.new(bad_arr).perform }
         .to raise_error /non-unique numbers in cells/i
     end
