@@ -12,7 +12,7 @@ describe ProblemUnifier do
     end
   end
 
-  it 'will convet dots to zeros' do
+  it 'will convet dots to zeros in the array' do
     expect(ProblemUnifier.new(input_arr).unify).to eq output_arr
   end
 
